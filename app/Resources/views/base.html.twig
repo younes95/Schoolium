@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+         <link rel="stylesheet" type="text/css" id="theme" href="{{ asset('css/theme-default.css') }}"/>
+        
+    </head>
+    <body style="height: 100%;">
+        
+        {% block body %}{% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+
+    </body>
+</html>

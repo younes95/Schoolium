@@ -1,0 +1,53 @@
+{% extends 'baseList.html.twig' %}
+
+{% block title %}
+	{{'list'|trans}} {{'classe'|trans}}
+{% endblock %}
+
+
+{% block bodyList %}
+
+    <div class="table-responsive">
+        <table id="customers2" class="table datatable">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Annee</th>
+                    <th>Nombre d'èléves</th>
+                    <th>Responsable</th>
+                    <th>{{'edit'|trans}}</th>
+                    <th>{{'delete'|trans}}</th>
+                    <th>Affecter Profs</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for classe in app.user.ecole.classes%}
+					<tr>
+						<td>{{ classe.nom|upper}}</td>
+						<td>{{ classe.description}}</td>
+						<td>{{ classe.annee.nom}} {{ classe.annee.niveau}}</td>
+						<td>{{ classe.eleves|length}}</td>
+						<td>{{ classe.responsable.nom}}</td>
+						<td>
+							<a href="{{ path('editClasse',{'id':classe.id})}}">
+								<span class="fa fa-pencil-square-o"></span>
+							</a>
+						</td>
+						<td>
+							<a href="{{ path('removeClasse',{'id':classe.id})}}">
+								<span class="fa fa-trash"></span>
+							</a>
+						</td>
+						<td>
+							<a href="{{ path('affectProf',{'id':classe.id})}}">
+								<span class="fa fa-user-plus"></span>
+							</a>
+						</td>
+					</tr>
+                {% endfor %}
+            </tbody>
+        </table>                                    
+    </div>
+    
+{% endblock %}  

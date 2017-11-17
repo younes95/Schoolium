@@ -1,0 +1,50 @@
+{% extends 'baseList.html.twig' %}
+
+{% block title %}
+    {{'list'|trans}} {{'teachers'|trans}}
+{% endblock %}
+
+{% block bodyList %}
+	 <div class="table-responsive">
+        <table id="customers2" class="table datatable">
+            <thead>
+                <tr>
+                    <th>Nom & Prenom</th>
+                    <th> Age </th>
+                    <th>Date d'entrée</th>
+                    <th>Type de contrat</th>
+                    <th>telephone</th>
+                    <th>{{'edit'|trans}}</th>
+                    <th>{{'delete'|trans}}</th>
+                    <th>{{'profile'|trans}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for enseignant in app.user.ecole.enseignants %}
+                    <tr>
+                        <td>{{ enseignant.nom|upper}} {{ enseignant.prenom}}</td>
+                        <td>{{ ("now"|date("Y"))-( enseignant.dateDeNaissance|date("Y"))}}</td>
+                        <td>{{enseignant.dateDEntree|date("Y-m-d")}}</td>
+                        <td>{{enseignant.typeContrat}}</td>
+                        <td>{{enseignant.telephone}}</td>
+                        <td>
+                            <a href="{{ path('editEnseignant',{'id':enseignant.id})}}">
+                                <span class="fa fa-pencil-square-o"></span>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('removeEnseignant',{'id':enseignant.id})}}">
+                                <span class="fa fa-trash"></span>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('profileEnseignant',{'id':enseignant.id})}}">
+                                <span class="fa fa-user"></span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>                                    
+    </div>
+{% endblock %}

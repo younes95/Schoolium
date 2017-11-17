@@ -1,0 +1,63 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+<div class="page-content-wrap">
+                
+    <div class="row">
+        <div class="col-md-12">               
+			{{ form_start(form, { 'attr' : { 'class': 'form-horizontal' } }) }}  
+				<div class="panel panel-default">
+		            <div class="panel-heading">
+		                <h3 class="panel-title"><strong>{% if edit %}{{'edit'|trans}}{% else %}{{'add'|trans}}{% endif %} </strong> {{'classe'|trans}}</h3>
+		            </div>
+		            <div class="panel-body">
+						<div class="form-group">
+							{{ form_label(form.nom , null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group">
+									<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+						    		{{ form_widget(form.nom ,{ 'attr': {'class': 'form-control'} }) }}
+						    	</div>
+						    	{{ form_errors(form.nom) }}
+						    </div>
+						</div>
+
+						<div class="form-group">
+							{{ form_label(form.annee , null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+						    	{{ form_widget(form.annee ,{ 'attr': {'class': 'form-control select'} }) }}
+						    	{{ form_errors(form.annee) }}
+						    </div>
+						</div>
+
+						<div class="form-group">
+							{{ form_label(form.description , null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+						    	{{ form_widget(form.description ,{ 'attr': {'class': 'form-control'} }) }}
+						    	{{ form_errors(form.description) }}
+						    </div>
+						</div>
+
+						<div class="form-group">
+							{{ form_label(form.responsable , null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+						    	{{ form_widget(form.responsable ,{ 'attr': {'class': 'form-control select'} }) }}
+						    	{{ form_errors(form.responsable) }}
+						    </div>
+						</div>
+					</div>
+			        <div class="panel-footer">                                    
+			            <button class="btn btn-primary pull-right">Valider</button>
+			        </div>
+			    </div>
+				{{ form_end(form) }}
+			</div>
+	    </div>                     
+	</div>
+{% endblock %}
+
+
+{% block javascripts %}
+	<script type='text/javascript' src="{{ asset('js/plugins/bootstrap/bootstrap-select.js') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,33 @@
+{% extends 'baseList.html.twig' %}
+
+{% block title %}
+	<h1>Pas de parent associé à {{eleve.nom}} {{eleve.prenom}} </h1>
+	<h2>Selectioner un parent</h2>	
+{% endblock %}
+
+{% block bodyList %}
+
+    <div class="table-responsive">
+        <table id="customers2" class="table datatable">
+            <thead>
+                <tr>
+                    <th>Nom & Prenom</th>
+                    <th>Associer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for parant in app.user.ecole.parents %}
+					<tr>
+						<td>{{ parant.nom|upper}} {{ parant.prenom}}</td>
+						<td>
+							<a href="{{ path('assoParent',{'id':eleve.id,'idp':parant.id})}}">
+								<span class="fa fa-male"></span>
+							</a>
+						</td>
+					</tr>
+                {% endfor %}
+            </tbody>
+        </table>                                    
+    </div>
+    
+{% endblock %}  

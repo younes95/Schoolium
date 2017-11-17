@@ -1,0 +1,43 @@
+{% extends 'baseList.html.twig' %}
+
+{% block title %}
+	{{'list'|trans}} {{'salles'|trans}}
+{% endblock %}
+
+
+{% block bodyList %}
+
+    <div class="table-responsive">
+        <table id="customers2" class="table datatable">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Capacité</th>
+                    <th>Equipements</th>
+                    <th>{{'edit'|trans}}</th>
+                    <th>{{'delete'|trans}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for salle in app.user.ecole.salles%}
+					<tr>
+						<td>{{ salle.nom|upper}}</td>
+						<td>{{ salle.capacite}}</td>
+						<td>{{ salle.equipement}}</td>
+						<td>
+							<a href="{{ path('editSalle',{'id':salle.id})}}">
+								<span class="fa fa-pencil-square-o"></span>
+							</a>
+						</td>
+						<td>
+							<a href="{{ path('removeSalle',{'id':salle.id})}}">
+								<span class="fa fa-trash"></span>
+							</a>
+						</td>
+					</tr>
+                {% endfor %}
+            </tbody>
+        </table>                                    
+    </div>
+    
+{% endblock %}  

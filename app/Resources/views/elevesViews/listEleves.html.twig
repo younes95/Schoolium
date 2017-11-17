@@ -1,0 +1,54 @@
+{% extends 'baseList.html.twig' %}
+
+{% block title %}
+	{{'list'|trans}} {{'students'|trans}}
+{% endblock %}
+
+{% block bodyList %}
+
+    <div class="table-responsive">
+        <table id="customers2" class="table datatable">
+            <thead>
+                <tr>
+                    <th>Nom & Prenom</th>
+                    <th>Age</th>
+                    <th>Annee</th>
+                    <th>{{'edit'|trans}}</th>
+                    <th>{{'delete'|trans}}</th>
+                    <th>{{'profile'|trans}}</th>
+                    <th>{{'parent'|trans}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for eleve in app.user.ecole.eleves %}
+					<tr>
+						<td>{{ eleve.nom|upper}} {{ eleve.prenom}}</td>
+						<td>{{ ("now"|date("Y"))-( eleve.dateDeNaissance|date("Y"))}}</td>
+						<td>{{ eleve.annee.nom}} {{ eleve.annee.niveau}}</td>
+						<td>
+							<a href="{{ path('editEleve',{'id':eleve.id})}}">
+								<span class="fa fa-pencil-square-o"></span>
+							</a>
+						</td>
+						<td>
+							<a href="{{ path('removeEleve',{'id':eleve.id})}}">
+								<span class="fa fa-trash"></span>
+							</a>
+						</td>
+						<td>
+							<a href="{{ path('profileEleve',{'id':eleve.id})}}">
+								<span class="fa fa-user"></span>
+							</a>
+						</td>
+						<td>
+							<a href="{{ path('parentEleve',{'id':eleve.id})}}">
+								<span class="fa fa-male"></span>
+							</a>
+						</td>
+					</tr>
+                {% endfor %}
+            </tbody>
+        </table>                                    
+    </div>
+    
+{% endblock %}               

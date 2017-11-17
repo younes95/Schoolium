@@ -1,0 +1,18 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: schoolium
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: symfony@gmail.com
+    mailer_password: symfony
+    secret: 123abcd456789
+
+    uploads_cours_support: uploads/cours/support
+    uploads_cours_devoir: uploads/cours/devoir
+    uploads_cours_annexe: uploads/cours/annexe
+    uploads_matiere_prog_annuel: uploads/matiere/programme
+    uploads_devoir: uploads/devoir
