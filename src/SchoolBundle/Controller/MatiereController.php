@@ -75,7 +75,7 @@ class MatiereController extends Controller
      */
     public function removeAction(Matiere $matiere)
     {
-         $em=$this->getDoctrine()->getManager();
+        $em=$this->getDoctrine()->getManager();
         $em->remove($matiere);
         $em->flush();
         return $this->redirectToRoute('listMatieres'); 
@@ -138,6 +138,7 @@ class MatiereController extends Controller
         // Connection BDD
         $em = $this->getDoctrine()->getManager();
         extract($_POST);
+        
         for($i=0;$i<$cpt;$i++){
             
                 $idMatiere=$_POST['idmatiere'.$i];
@@ -150,6 +151,15 @@ class MatiereController extends Controller
                     
                     $noteVal=$_POST['eleve'.$idEleve.'id'.$j.'note'];
                     $idEvaluation=$_POST['eleve'.$idEleve.'id'.$j.'Evaluation'];
+                    if(isset($_POST['eleve'.$idEleve.'id'.$j.'remarque']))
+                    $remarque=$_POST['eleve'.$idEleve.'id'.$j.'remarque'];
+                    else $remarque="";
+
+                    if(isset($_POST['eleve'.$idEleve.'id'.$j.'date']))
+                    $date=new \DateTime($_POST['eleve'.$idEleve.'id'.$j.'date']);
+                    else $date=null;
+                    
+
                     if($noteVal!=""){
                 
                         $idmatiereEleve=$_POST['eleve'.$idEleve.'id'.$j.'MatiereEleve'];
@@ -165,6 +175,9 @@ class MatiereController extends Controller
                         $matiereEleve->setMatiere($matiere);
                         $matiereEleve->setEleve($eleve);
                         $matiereEleve->setEvaluation($evaluation);
+                        $matiereEleve->setRemarque($remarque);
+                        $matiereEleve->setDate($date);
+                        
                         $em->persist($matiereEleve);
                     }
                     $em->flush();
@@ -197,7 +210,7 @@ class MatiereController extends Controller
     }
 
      /**
-     * @Route("/program/{id}", name="program_add")
+     * @Route("/program/annual/{id}", name="matiere_program_annual_add")
      */
     public function programAction(Request $request)
     {
@@ -222,8 +235,10 @@ class MatiereController extends Controller
                 $idEnsMat=addslashes($_POST['idEnsMat'.$cpt]);
                 $ensMat=$em->getRepository('SchoolBundle:EnsMat')->findOneBy(array('id'=> $idEnsMat));
                 $uploaded_file = $form[$cpt]['programmeAnnuel']->getData();
-                if(!empty($ensMat->getProgrammeAnnuel()) && $uploaded_file)
-                {
+                
+                if($uploaded_file != null){
+                    
+                    $em->clear();
                     $file =  $ensMat->getProgrammeAnnuel();
                     $fileName = md5(uniqid()).'.'.$file->guessExtension();
                     $file->move(
@@ -231,14 +246,38 @@ class MatiereController extends Controller
                         $fileName
                     );
                      $ensMat->setProgrammeAnnuel($fileName);
+
+                }else{
+                    $em->clear();
+                    $ensMat_tmp=$em->getRepository('SchoolBundle:EnsMat')->findOneBy(array('id'=> $idEnsMat));
+                    $ensMat->setProgrammeAnnuel($ensMat->getProgrammeAnnuel());
+                   
                 }
                
-                $em->persist($ensMat);
+                $em->merge($ensMat);
                 $em->flush();
+
+                return $this->redirectToRoute('matiere_program_annual_add',array('id' => $id));
             }
 
         return $this->render('matieresViews/listProgram.html.twig',array("data"=>$ensMatiere,'form'=>$form));
         
     }    
+
+     /**
+     * @Route("/program/annual/delete/{id}", name="matiere_program_annual_delete")
+     */
+    public function programDeleteAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        $id=$request->attributes->get('id');
+        $ensMat=$em->getRepository('SchoolBundle:EnsMat')->findOneBy(array('id'=> $id));
+        $ensMat->setProgrammeAnnuel(null);        
+        $em->persist($ensMat);
+        $em->flush();
+
+        $referer = $request->headers->get('referer');
+        return $this->redirect($referer); 
+    }
+
 
 }

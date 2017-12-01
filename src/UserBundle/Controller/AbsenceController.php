@@ -90,4 +90,44 @@ class AbsenceController extends Controller
             'absences'=> $absences,
             'form' => $form->createView()));
     }
+
+    /**
+     * @Route("/delete/{id}", name="delete_absence")
+     */
+    public function deleteAction(Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $id=$request->attributes->get('id');
+        $absence=$em->getRepository('UserBundle:Absence')->findOneBy(array('id'=> $id));
+        $em->remove($absence);
+        $em->flush();
+        
+        $referer = $request->headers->get('referer');
+     
+        return $this->redirect($referer);  
+    }
+
+    /**
+     * @Route("/{id}/edit/{idClasse}", name="edit_absence")
+     */
+    public function editAction(Request $request, Absence $absence)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $id=$request->attributes->get('idClasse');
+       
+        $editForm = $this->createForm('UserBundle\Form\AbsenceType', $absence,array('idClasse'=>$id));
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('absence_index');
+        }
+
+        return $this->render('absence/edit.html.twig', array(
+            'absence' => $absence,
+            'edit_form' => $editForm->createView()
+        ));
+    }
+
 }

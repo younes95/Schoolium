@@ -1,0 +1,84 @@
+{% extends 'base2.html.twig' %}
+
+
+{% block body %}
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12">  
+			{{ form_start(edit_form, { 'attr' : { 'class': 'form-horizontal' } }) }}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						{{ form_label(edit_form.matiere,null,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+						<div class="col-md-6 col-xs-12">
+							<div class="input-group">
+								{{ form_widget(edit_form.matiere,{ 'id':'selectMatiere', 'label_attr': {'class': 'form-control select'} }) }}
+					  		</div>
+							{{ form_errors(edit_form.matiere) }}
+						</div>
+					</div>
+					<div class="form-group">
+						{{ form_label(edit_form.classe,null,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+						<div class="col-md-6 col-xs-12">
+							<div class="input-group">
+								{{ form_widget(edit_form.classe,{ 'id':'selectClasse', 'label_attr': {'class': 'form-control select'} }) }}
+					  		</div>
+							{{ form_errors(edit_form.classe) }}
+						</div>
+					</div>
+					<div class="form-group">
+						{{ form_label(edit_form.date,null,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+						<div class="col-md-6 col-xs-12">
+							<div class="input-group">
+								<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+					   			{{ form_widget(edit_form.date) }}
+					  		</div>
+							{{ form_errors(edit_form.date) }}
+						</div>
+					</div>
+					<div class="form-group">
+						{{ form_label(edit_form.travail,null,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+						<div class="col-md-6 col-xs-12">
+							<a class="file-input-wrapper btn btn-default  fileinput">
+		                       	<span>{{'global.parcourir'|trans}}</span>
+		                       	{{ form_widget(edit_form.travail,{ 'label_attr': {'class': 'fileinput'} } ) }}
+				  			</a>
+							{{ form_errors(edit_form.travail) }}
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">                                    
+					<input type="submit" value="{{'add'|trans}}" class="btn btn-primary pull-right" />
+				</div>
+				{{ form_end(edit_form) }}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	
+<script type="text/javascript">
+
+     $( document ).ready( function() {
+
+                $('.dp-3').datepicker({startView: 2,format: 'yyyy-mm-dd' });
+                $('#selectMatiere').selectpicker({
+ 					style: 'btn-default',
+  					size: 4
+				});
+				$('#selectClasse').selectpicker({
+ 					style: 'btn-default',
+  					size: 4
+				});
+            });
+</script>
+
+{% endblock %}

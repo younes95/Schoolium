@@ -19,14 +19,14 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Programme controller.
  *
- * @Route("/programme")
+ * @Route("/program")
  */
 class ProgrammeController extends Controller
 {
      /**
      * Creates a new artwork entity.
      *
-     * @Route("/new", name="programme_new")
+     * @Route("/new", name="program_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -53,7 +53,7 @@ class ProgrammeController extends Controller
     }
 
      /**
-     * @Route("/show/classe/{id}", name="showClasse")
+     * @Route("/show/class/{id}", name="program_show_class")
      */
     public function showClasseAction(Request $request)
     {   
@@ -67,7 +67,7 @@ class ProgrammeController extends Controller
     }   
 
     /**
-     * @Route("/show/enseignant/{id}", name="showEnseignant")
+     * @Route("/show/enseignant/{id}", name="program_show_enseignant")
      */
     public function showEnseignantAction(Request $request)
     {

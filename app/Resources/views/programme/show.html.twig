@@ -1,29 +1,263 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
+
+
 
 
 {% block body %}
-{%dump(data)%}
-	<table>
+
+	<div class="content-frame-body padding-bottom-0">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="alert_holder"></div>
+                <div class="calendar">                                
+        		    <div id="calendar"></div>                            
+                </div>
+            </div>
+        </div>
+    </div>   
+
+
+{% endblock %}
+
+{% block javascripts %}
 		
+		{% dump(data) %}
+		<script type="text/javascript">
+			var j=0;
+			datedeb = [];
+			datefin = [];
+			titletab = [];
+		</script>
 	{% for jour in data.jour %}
-		<th>
-			{{jour.nom}}
-		</th>
-		
 		{% for horraire in data.horraire %}
-		<tr>	
-				<td>{{horraire.heureDeb|date('H')~'H - '~horraire.heureFin|date('H')~'H'}}</td>
-				{% for programme in data.programme %}
-					{% if programme.jour.id==jour.id and programme.horraire.id==horraire.id %}
-					<td>{{programme.matiere.nom~' '~programme.enseignant.nom~' '~programme.salle.nom}}</td>
-					{% endif %}
-				{% endfor %}
-				
-		</tr>
+			{% for programme in data.programme %}
+				{% if programme.jour.id==jour.id and programme.horraire.id==horraire.id %}
+					<script type="text/javascript">
+						var curr = new Date; 
+						var first = curr.getDate() - curr.getDay(); 
+						i=0;
+						day=first;
+						startDate=new Date(curr.setDate(day));
+						for(i=0;i<5;i++){
+							dateD=new Date(curr.setDate(day));
+							dateF=new Date(curr.setDate(day));
+							dateNom=dateD.toLocaleDateString('fr-FR', { weekday: 'long' });
+							if(dateNom=="{{jour.nom}}"){
+								dateD.setHours(new Date("{{horraire.heureDeb.date}}").getHours());
+								dateD.setMinutes(new Date("{{horraire.heureDeb.date}}").getMinutes());
+								datedeb[j]=dateD;
+								titletab[j]= "{{programme.matiere.nom~' '~programme.enseignant.nom~' '~programme.salle.nom}}" ;
+								dateF.setHours(new Date("{{horraire.heurefin.date}}").getHours());
+								dateF.setMinutes(new Date("{{horraire.heurefin.date}}").getMinutes());
+								datefin[j]=dateF;
+								j++;
+							}
+							day++;
+
+						}
+					</script>
+				{% endif %}
+			{% endfor %}
 		{% endfor %}
 	{% endfor %}
+	<script type="text/javascript" src="{{ asset('js/plugins/fullcalendar/fullcalendar.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/plugins/fullcalendar/lang/fr.js')}}"></script>
 
-	
-	</table>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+			
+			var curr = new Date; // get current date
+			var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
+			    
+			i=0;
+			day=first;
+			/*for(i=0;i<5;i++){
+				alert(new Date(curr.setDate(day)).toLocaleDateString('fr-FR', { weekday: 'long' }));
+				day++;
 
+			}*/
+
+			
+
+		var calendar = $('#calendar').fullCalendar({
+			
+				editable: false,
+				
+				minTime: "8:00",
+
+                maxTime: "18:00",
+
+                firstDay: 0,
+
+                hiddenDays: [ 5, 6 ],
+
+				lang: 'fr',
+
+				defaultView: 'agendaWeek',
+			   	
+			   	header: {
+					left: 'prev,next today',
+			    	center: 'title',
+			    	right: 'agendaWeek,agendaDay'
+			   	},
+
+
+			   events: "events.php",
+			   
+			   eventRender: function(event, element, view) {
+
+				    if (event.allDay === 'true') {
+
+				     event.allDay = true;
+
+				    } else {
+
+				     event.allDay = false;
+
+				    }
+
+			   },
+
+				   selectable: true,
+
+				   selectHelper: true,
+
+				   select: function(start, end, allDay) {
+
+					   var title = prompt('Event Title:');
+
+
+					   if (title) {
+
+						  // var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+
+						 //  var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+
+						   $.ajax({
+
+							   url: 'add_events.php',
+
+							   data: 'title='+ title+'&start='+ start +'&end='+ end,
+
+							   type: "POST",
+
+							   success: function(json) {
+
+							   alert('Added Successfully');
+
+							   }
+
+						   });
+
+						   calendar.fullCalendar('renderEvent',{
+
+								   title: title,
+
+								   start: start,
+
+								   end: end,
+
+								   allDay: allDay
+									},true
+							);
+
+					   }
+
+				   		calendar.fullCalendar('unselect');
+
+				   },
+
+
+				   eventDrop: function(event, delta) {
+
+					   var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+
+					   var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+
+					   $.ajax({
+
+						   url: 'update_events.php',
+
+						   data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
+
+						   type: "POST",
+
+						   success: function(json) {
+
+						    alert("Updated Successfully");
+
+						   }
+
+					   });
+
+				   },
+
+				   eventClick: function(event) {
+
+						var decision = confirm("Do you really want to do that?"); 
+
+						if (decision) {
+
+							$.ajax({
+
+								type: "POST",
+
+								url: "delete_event.php",
+
+								data: "&id=" + event.id,
+
+								 success: function(json) {
+
+									 $('#calendar').fullCalendar('removeEvents', event.id);
+
+									  alert("Updated Successfully");}
+
+							});
+
+						}
+
+				  	},
+
+				   eventResize: function(event) {
+
+					   var start = $.fullCalendar.formatDate(event.start, "yyyy-MM-dd HH:mm:ss");
+
+					   var end = $.fullCalendar.formatDate(event.end, "yyyy-MM-dd HH:mm:ss");
+
+					   $.ajax({
+
+					    url: 'update_events.php',
+
+					    data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
+
+					    type: "POST",
+
+					    success: function(json) {
+
+					     alert("Updated Successfully");
+
+					    }
+
+					   });
+
+					}
+		});
+			length=j;
+
+			
+			
+			for(var i=0;i<length;i++){
+				calendar.fullCalendar('renderEvent',{
+					title: titletab[i],
+		   			start: datedeb[i],
+		   			end: datefin[i],
+					},true
+				);
+			};
+
+			//$('#calendar').fullCalendar('gotoDate', startDate);
+		  	
+		  });
+
+		</script>
 {% endblock %}

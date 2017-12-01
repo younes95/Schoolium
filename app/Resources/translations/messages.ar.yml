@@ -66,7 +66,20 @@ list: قائمة
 delete: حذف
 profile: الحساب
 matiere: مادة
+matieres: مادة
 annee: سنة 
+classe: القسم
+classes: القسم
+niveau: المستوى
+note: النتائج
+
+
+eleve:
+    title: الطالب
+    show: عرض الطالب
+    nom: Nom de l'élève
+    prenom: Prénom de l'élève
+    nom_prenom: Nom et prénom de l'élève
 
 devoir:
     maison:
@@ -74,10 +87,14 @@ devoir:
         add: إضافة واجب منزلي
 
 evaluation:
+    title: تقييم
     add: إضافة تقييم
 
 cours: 
+    title: الدرس
+    name: اسم الدروس
     add: إضافة درس
+    list: قائمة الدروس
     support: 
         title: دعم بالطبع
         add: إضافة الدعم
@@ -86,6 +103,7 @@ cours:
         add: إضافة ملحق
 
 message:
+    title: رسالة
     send: إرسال رسالة
 
 global:
@@ -94,6 +112,10 @@ global:
     add: اضافة
     delete: حذف
     edit: تعديل
+    show: عرض
+    search: بحث
+    action: فعل
+    type: Type
     annual:
         program: البرنامج السنوي
 
@@ -101,3 +123,14 @@ absence:
     title: الغيابات
     add: إضافة الغيابات
     manage: إدارة الغيابات
+    date: Date d'absence
+
+retard:
+    title: Retard
+    add: Ajouter un retard
+    manage: Gérer les retards
+    date: Date de retard
+
+travail: 
+    title: Travail Réalisé
+    add: Ajouter un travail

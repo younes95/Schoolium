@@ -1,0 +1,83 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12">  
+			{{ form_start(edit_form, { 'attr' : { 'class': 'form-horizontal' } }) }}
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							{{'evaluation.add'|trans}}
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							{{ form_label(edit_form.eleve, null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group">
+									{{ form_widget(edit_form.eleve,{ 'id':'selectEleve', 'label_attr': {'class': 'form-control select'} }) }}
+				  				</div>
+						    {{ form_errors(edit_form.eleve) }}
+							</div>
+						</div>
+						<div class="form-group">
+							{{ form_label(edit_form.type, null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group">
+									{{ form_widget(edit_form.type,{ 'id':'selectType', 'label_attr': {'class': 'form-control select'} }) }}
+				  				</div>
+						    {{ form_errors(edit_form.type) }}
+							</div>
+						</div>
+						<div class="form-group">
+							{{ form_label(edit_form.date, null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group date">
+									 {{ form_widget(edit_form.date) }}
+                                    <span class="input-group-addon">
+                                    	<span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+				  				{{ form_errors(edit_form.date) }}
+				  			</div>
+						</div>
+						<div class="form-group">
+							{{ form_label(edit_form.commentaire, null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} })}}
+							<div class="col-md-6 col-xs-12">
+								{{ form_widget(edit_form.commentaire)  }}
+				  				{{ form_errors(edit_form.commentaire) }}
+				  			</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">                                    
+					<input type="submit" value="{{'global.edit'|trans}}" class="btn btn-primary pull-right" />
+				</div>
+			{{ form_end(edit_form) }}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+	
+<script type="text/javascript">
+
+     $( document ).ready( function() {
+
+                $('.dp-3').datepicker({startView: 2,format: 'yyyy-mm-dd' });
+                $('#selectEleve').selectpicker({
+ 					style: 'btn-default',
+  					size: 4
+				});
+				 $('#selectType').selectpicker({
+ 					style: 'btn-default',
+  					size: 4
+				});
+            });
+</script>
+
+{% endblock %}

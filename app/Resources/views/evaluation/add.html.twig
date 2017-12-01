@@ -1,32 +1,57 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
 {% block body %}
+<div class="page-content-wrap">
+                
+    <div class="row">
+        <div class="col-md-12">  
 
 
-<h1>{{'list'|trans}} {{'teachers'|trans}}</h1>
-
-	{{ form_start(form) }}
-		<div class="form-group">
-			{{ form_label(form.matiere) }}
-		    {{ form_widget(form.matiere ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.matiere) }}
+	{{ form_start(form, { 'attr' : { 'class': 'form-horizontal' } }) }}
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				{{'evaluation.add'|trans}}
+			</h3>
 		</div>
+		<div class="panel-body">
+						<div class="form-group">
+							{{ form_label(form.matiere,null,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group">
+									<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+						   			{{ form_widget(form.matiere ,{ 'attr': {'class': 'form-control'} }) }}
+						  		</div>
+								{{ form_errors(form.matiere) }}
+							</div>
+						</div>
+						
+						<div class="form-group">
+							{{ form_label(form.classe,null,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group">
+									<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+						   			{{ form_widget(form.classe ,{ 'attr': {'class': 'form-control'} }) }}
+						   		</div>
+						   	</div>
+						    {{ form_errors(form.classe) }}
+						</div>
 
-		<div class="form-group">
-			{{ form_label(form.classe) }}
-		    {{ form_widget(form.classe ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.classe) }}
+						<div class="form-group">
+							{{ form_label(form.evaluation,null,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group">
+								<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+						   		{{ form_widget(form.evaluation ,{ 'attr': {'class': 'form-control'} }) }}
+						   		</div>
+						   	</div>
+						    {{ form_errors(form.evaluation) }}
+						</div>
 		</div>
-
-		<div class="form-group">
-			{{ form_label(form.evaluation) }}
-		    {{ form_widget(form.evaluation ,{ 'attr': {'class': 'form-control'} }) }}
-		    {{ form_errors(form.evaluation) }}
+		<div class="panel-footer">                                    
+		   	<input type="submit" value="{{'add'|trans}}" class="btn btn-primary pull-right" />
 		</div>
-
-		<div class="form-group">
-			<input type="submit">
-		</div>
+	</div>
 		
 	{{ form_end(form) }}
 	

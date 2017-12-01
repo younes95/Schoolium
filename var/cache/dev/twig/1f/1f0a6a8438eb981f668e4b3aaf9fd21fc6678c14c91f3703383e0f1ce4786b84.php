@@ -19,11 +19,11 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_25a133dfe665fbd89a7cb53049c610ccf7b7b4847295deff919c62b69bcc6cb7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_25a133dfe665fbd89a7cb53049c610ccf7b7b4847295deff919c62b69bcc6cb7->enter($__internal_25a133dfe665fbd89a7cb53049c610ccf7b7b4847295deff919c62b69bcc6cb7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base2.html.twig"));
+        $__internal_271982e06482af9d16026e609c8c91f17c8ef66dd6bebc7e54bdaff8956d56e8 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_271982e06482af9d16026e609c8c91f17c8ef66dd6bebc7e54bdaff8956d56e8->enter($__internal_271982e06482af9d16026e609c8c91f17c8ef66dd6bebc7e54bdaff8956d56e8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base2.html.twig"));
 
-        $__internal_8c6e274c8e1d25f248c981458a5abb584b387fd29329fa6bc8ed26d4566c7a73 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8c6e274c8e1d25f248c981458a5abb584b387fd29329fa6bc8ed26d4566c7a73->enter($__internal_8c6e274c8e1d25f248c981458a5abb584b387fd29329fa6bc8ed26d4566c7a73_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base2.html.twig"));
+        $__internal_c8dfbf97bb3459576a5c1e204808f098ba14d466b3f28e4c487af73bababb070 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c8dfbf97bb3459576a5c1e204808f098ba14d466b3f28e4c487af73bababb070->enter($__internal_c8dfbf97bb3459576a5c1e204808f098ba14d466b3f28e4c487af73bababb070_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base2.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -110,121 +110,251 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
                             </div>
                         </div>                                                                        
                     </li>
-                    <li class=\"active\" ><a href=\"#\"><span class=\"fa fa-dashboard\"></span> <span class=\"xn-text\">Dashboard</span></a></li>
-                    <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-graduation-cap\"></span> <span class=\"xn-text\">Gestion des Eleves</span></a>
-                        <ul>
-                            <li><a href=\"";
-        // line 51
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addEleve");
-        echo "\"><span class=\"xn-text\">Ajouter Eleve</span></a></li>
-                            <li><a href=\"";
-        // line 52
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listEleves");
-        echo "\"><span class=\"xn-text\">Liste des eleves </span></a></li>
-                        </ul>
+
+                    <li class=\"active\" >
+                        <a href=\"#\">
+                            <span class=\"fa fa-dashboard\"></span> 
+                            <span class=\"xn-text\">Dashboard</span>
+                        </a>
                     </li>
-                    <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-male\"></span> <span class=\"xn-text\">Gestion des Parents</span></a>
-                        <ul>
-                            <li><a href=\"";
-        // line 58
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addParental");
-        echo "\"><span class=\"xn-text\">Ajouter Parent</span></a></li>
-                            <li><a href=\"";
-        // line 59
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listParentals");
-        echo "\"><span class=\"xn-text\">Liste des Parents </span></a></li>
-                        </ul>
-                    </li>
-                     <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-briefcase\"></span> <span class=\"xn-text\">Gestion des Enseignants</span></a>
-                        <ul>
-                            <li><a href=\"";
-        // line 65
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addEnseignant");
-        echo "\"><span class=\"xn-text\">Ajouter Enseignant</span></a></li>
-                            <li><a href=\"";
-        // line 66
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listEnseignants");
-        echo "\"><span class=\"xn-text\">Liste des Enseignants </span></a></li>
-                        </ul>
-                    </li>
-                     <!-- <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-book\"></span> <span class=\"xn-text\">Gestion des Matieres</span></a>
-                        <ul>
-                            <li><a href=\"#\"><span class=\"xn-text\">Ajouter Matiere</span></a></li>
-                            <li><a href=\"dashboard.html\"><span class=\"xn-text\">Liste des Matieres </span></a></li>
-                        </ul>
-                    </li> -->
-                     <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-users\"></span> <span class=\"xn-text\">Gestion des Classes</span></a>
-                        <ul>
-                            <li><a href=\"";
-        // line 79
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addClasse");
-        echo "\"><span class=\"xn-text\">Ajouter Classe</span></a></li>
-                            <li><a href=\"";
-        // line 80
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listClasses");
-        echo "\"><span class=\"xn-text\">Liste des Classes </span></a></li>
-                        </ul>
-                    </li>
-                     <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-table\"></span> <span class=\"xn-text\">Gestion des Emplois de temps</span></a>
-                        <ul>
-                            <li><a href=\"#\"><span class=\"xn-text\">Ajouter Emploi de temps</span></a></li>
-                            <li><a href=\"#\"><span class=\"xn-text\">Liste des Emplois de temps </span></a></li>
-                        </ul>
-                    </li>
-                     <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-th\"></span> <span class=\"xn-text\">Gestion des Salles</span></a>
-                        <ul>
-                            <li><a href=\"";
-        // line 93
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addSalle");
-        echo "\"><span class=\"xn-text\">Ajouter Salle</span></a></li>
-                            <li><a href=\"";
-        // line 94
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listSalles");
-        echo "\"><span class=\"xn-text\">Liste des Salles </span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href=\"#\"><span class=\"fa fa-check-square-o\"></span> <span class=\"xn-text\">Gestion des Retards et absences</span></a></li>
-                    <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-bus\"></span> <span class=\"xn-text\">Transport</span></a>
-                        <ul>
-                            <li><a href=\"";
-        // line 101
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addTransport");
-        echo "\"><span class=\"xn-text\">Ajouter Transport</span></a></li>
-                            <li><a href=\"";
-        // line 102
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listTransports");
-        echo "\"><span class=\"xn-text\">Liste des Transports </span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href=\"#\"><span class=\"fa fa-money\"></span> <span class=\"xn-text\">Payement</span></a></li>
-                    <li><a href=\"#\"><span class=\"fa fa-envelope-o\"></span> <span class=\"xn-text\">Messagerie</span></a></li>
-                    <li><a href=\"#\"><span class=\"fa fa-leanpub\"></span> <span class=\"xn-text\">Ressources pédagogiques</span></a></li>
-                    <li><a href=\"#\"><span class=\"fa fa-table\"></span> <span class=\"xn-text\">Plannings des examens</span></a></li>
-                    <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-cutlery\"></span> <span class=\"xn-text\">Menu de cantine</span></a>
-                        <ul>
-                            <li><a href=\"";
-        // line 112
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addMenu");
-        echo "\"><span class=\"xn-text\">Ajouter Menu</span></a></li>
-                            <li><a href=\"";
-        // line 113
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listMenus");
-        echo "\"><span class=\"xn-text\">Liste des Menus </span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href=\"#\"><span class=\"fa fa-check\"></span> <span class=\"xn-text\">Bultin</span></a></li>
-                    <li><a href=\"#\"></a></li>
-                    
-                    
+
+                    <!-- Menu Navigation pour Administrateur -->
+
+                    ";
+        // line 57
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 58
+            echo "                        ";
+            if (twig_in_filter("ROLE_ENSEIGNANT", $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "roles", array()))) {
+                // line 59
+                echo "                           
+                            <!-- Gestion des classes -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\">
+                                    <span class=\"fa fa-users\"></span> 
+                                    <span class=\"xn-text\">Gestion des Classes</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href=\"";
+                // line 68
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("enseignant_liste_classes", array("id" => $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "id", array()))), "html", null, true);
+                echo "\">
+                                            <span class=\"xn-text\">Liste des Classes </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=\"";
+                // line 73
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("matiere_program_annual_add", array("id" => $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "id", array()))), "html", null, true);
+                echo "\">
+                                            <span class=\"xn-text\">Programme Annuel </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=\"";
+                // line 78
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("show_travail", array("id" => $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "id", array()))), "html", null, true);
+                echo "\">
+                                            <span class=\"xn-text\">Travail réalisé </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Gestion des absences/retard -->
+                            <li>
+                                <a href=\"";
+                // line 86
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("absence_index");
+                echo "\">
+                                    <span class=\"fa fa-check-square-o\"></span> 
+                                    <span class=\"xn-text\">Gestion des Retards et absences</span>
+                                </a>
+                            </li>
+                            <!-- Gestion des emplois du temps -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\">
+                                    <span class=\"fa fa-table\">
+                                    </span> 
+                                    <span class=\"xn-text\">Gestion des Emplois de temps</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href=\"";
+                // line 100
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("program_show_enseignant", array("id" => $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "id", array()))), "html", null, true);
+                echo "\">
+                                            <span class=\"xn-text\">Mon Emploi du temps</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                           
+                        ";
+            }
+            // line 108
+            echo "                    ";
+        }
+        // line 109
+        echo "
+                    <!-- Fin Menu Navigation pour Enseignant -->
+
+                    <!-- Menu Navigation pour Administrateur -->
+
+                    ";
+        // line 114
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 115
+            echo "                        ";
+            if (twig_in_filter("ROLE_ADMIN", $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "roles", array()))) {
+                // line 116
+                echo "                            <!-- Gestion des élèves -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-graduation-cap\"></span> <span class=\"xn-text\">Gestion des Eleves</span></a>
+                                <ul>
+                                    <li><a href=\"";
+                // line 120
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addEleve");
+                echo "\"><span class=\"xn-text\">Ajouter Eleve</span></a></li>
+                                    <li><a href=\"";
+                // line 121
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listEleves");
+                echo "\"><span class=\"xn-text\">Liste des eleves </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gestion des parents -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-male\"></span> <span class=\"xn-text\">Gestion des Parents</span></a>
+                                <ul>
+                                    <li><a href=\"";
+                // line 129
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addParental");
+                echo "\"><span class=\"xn-text\">Ajouter Parent</span></a></li>
+                                    <li><a href=\"";
+                // line 130
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listParentals");
+                echo "\"><span class=\"xn-text\">Liste des Parents </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gestion des enseignants -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-briefcase\"></span> <span class=\"xn-text\">Gestion des Enseignants</span></a>
+                                <ul>
+                                    <li><a href=\"";
+                // line 138
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addEnseignant");
+                echo "\"><span class=\"xn-text\">Ajouter Enseignant</span></a></li>
+                                    <li><a href=\"";
+                // line 139
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listEnseignants");
+                echo "\"><span class=\"xn-text\">Liste des Enseignants </span></a></li>
+                                </ul>
+                            </li>
+                            <!-- <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-book\"></span> <span class=\"xn-text\">Gestion des Matieres</span></a>
+                                <ul>
+                                    <li><a href=\"#\"><span class=\"xn-text\">Ajouter Matiere</span></a></li>
+                                    <li><a href=\"dashboard.html\"><span class=\"xn-text\">Liste des Matieres </span></a></li>
+                                </ul>
+                            </li> -->
+
+                            <!-- Gestion des classes -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-users\"></span> <span class=\"xn-text\">Gestion des Classes</span></a>
+                                <ul>
+                                    <li><a href=\"";
+                // line 154
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addClasse");
+                echo "\"><span class=\"xn-text\">Ajouter Classe</span></a></li>
+                                    <li><a href=\"";
+                // line 155
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listClasses");
+                echo "\"><span class=\"xn-text\">Liste des Classes </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gestion des emplois du temps -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-table\"></span> <span class=\"xn-text\">Gestion des Emplois de temps</span></a>
+                                <ul>
+                                    <li><a href=\"#\"><span class=\"xn-text\">Ajouter Emploi de temps</span></a></li>
+                                    <li><a href=\"#\"><span class=\"xn-text\">Liste des Emplois de temps </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gestion des salles -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-th\"></span> <span class=\"xn-text\">Gestion des Salles</span></a>
+                                <ul>
+                                    <li><a href=\"";
+                // line 172
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addSalle");
+                echo "\"><span class=\"xn-text\">Ajouter Salle</span></a></li>
+                                    <li><a href=\"";
+                // line 173
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listSalles");
+                echo "\"><span class=\"xn-text\">Liste des Salles </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gestion des absences/retard -->
+                            <li><a href=\"#\"><span class=\"fa fa-check-square-o\"></span> <span class=\"xn-text\">Gestion des Retards et absences</span></a></li>
+
+                            <!-- Transport -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-bus\"></span> <span class=\"xn-text\">Transport</span></a>
+                                <ul>
+                                    <li><a href=\"";
+                // line 184
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addTransport");
+                echo "\"><span class=\"xn-text\">Ajouter Transport</span></a></li>
+                                    <li><a href=\"";
+                // line 185
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listTransports");
+                echo "\"><span class=\"xn-text\">Liste des Transports </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Paiement -->
+                            <li><a href=\"#\"><span class=\"fa fa-money\"></span> <span class=\"xn-text\">Payement</span></a></li>
+
+                            <!-- Messagerie -->
+                            <li><a href=\"#\"><span class=\"fa fa-envelope-o\"></span> <span class=\"xn-text\">Messagerie</span></a></li>
+
+                            <!-- Ressources pédagogiques -->
+                            <li><a href=\"#\"><span class=\"fa fa-leanpub\"></span> <span class=\"xn-text\">Ressources pédagogiques</span></a></li>
+
+                            <!-- Planning des examens -->
+                            <li><a href=\"#\"><span class=\"fa fa-table\"></span> <span class=\"xn-text\">Plannings des examens</span></a></li>
+
+                            <!-- Menu cantine -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-cutlery\"></span> <span class=\"xn-text\">Menu de cantine</span></a>
+                                <ul>
+                                    <li><a href=\"";
+                // line 205
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("addMenu");
+                echo "\"><span class=\"xn-text\">Ajouter Menu</span></a></li>
+                                    <li><a href=\"";
+                // line 206
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listMenus");
+                echo "\"><span class=\"xn-text\">Liste des Menus </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Bulletin -->
+                            <li><a href=\"#\"><span class=\"fa fa-check\"></span> <span class=\"xn-text\">Bulletin</span></a></li>
+                        ";
+            }
+            // line 212
+            echo "        
+                    ";
+        }
+        // line 214
+        echo "                    
+                    <!-- Fin Menu Navigation pour Administrateur -->
                 </ul>
                 <!-- END X-NAVIGATION -->
             </div>
@@ -274,7 +404,7 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
                                 <a href=\"#\" class=\"list-group-item\">
                                     <div class=\"list-group-status status-online\"></div>
                                     <img src=\"";
-        // line 168
+        // line 264
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("uploads/photos/avatar.png"), "html", null, true);
         echo "\" class=\"pull-left\" alt=\"John Doe\"/>
                                     <span class=\"contacts-title\">John Doe</span>
@@ -283,7 +413,7 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
                                 <a href=\"#\" class=\"list-group-item\">
                                     <div class=\"list-group-status status-away\"></div>
                                     <img src=\"";
-        // line 174
+        // line 270
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("uploads/photos/avatar.png"), "html", null, true);
         echo "\" class=\"pull-left\" alt=\"Dmitry Ivaniuk\"/>
                                     <span class=\"contacts-title\">Dmitry Ivaniuk</span>
@@ -292,7 +422,7 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
                                 <a href=\"#\" class=\"list-group-item\">
                                     <div class=\"list-group-status status-away\"></div>
                                     <img src=\"";
-        // line 180
+        // line 276
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("uploads/photos/avatar.png"), "html", null, true);
         echo "\" class=\"pull-left\" alt=\"Nadia Ali\"/>
                                     <span class=\"contacts-title\">Nadia Ali</span>
@@ -301,7 +431,7 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
                                 <a href=\"#\" class=\"list-group-item\">
                                     <div class=\"list-group-status status-offline\"></div>
                                     <img src=\"";
-        // line 186
+        // line 282
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("uploads/photos/avatar.png"), "html", null, true);
         echo "\" class=\"pull-left\" alt=\"Darth Vader\"/>
                                     <span class=\"contacts-title\">Darth Vader</span>
@@ -366,11 +496,11 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
                         <a href=\"#\"><span class=\"flag flag-fr\"></span></a>
                         <ul class=\"xn-drop-left xn-drop-white animated zoomIn\">
                             <li><a href=\"";
-        // line 248
+        // line 344
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "request", array()), "get", array(0 => "_route"), "method"), twig_array_merge($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "request", array()), "get", array(0 => "_route_params"), "method"), array("_locale" => "fr"))), "html", null, true);
         echo "\"><span class=\"flag flag-fr\"></span> Français</a></li>
                             <li><a href=\"";
-        // line 249
+        // line 345
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "request", array()), "get", array(0 => "_route"), "method"), twig_array_merge($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "request", array()), "get", array(0 => "_route_params"), "method"), array("_locale" => "ar"))), "html", null, true);
         echo "\"><span class=\"flag flag-ar\"></span> العربية</a></li>
                         </ul>                        
@@ -388,9 +518,9 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
 
                 
                 ";
-        // line 264
+        // line 360
         $this->displayBlock('body', $context, $blocks);
-        // line 265
+        // line 361
         echo "
             </div>
             </div>                  
@@ -407,7 +537,7 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
                     <div class=\"mb-footer\">
                         <div class=\"pull-right\">
                             <a href=\"";
-        // line 280
+        // line 376
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_logout");
         echo "\" class=\"btn btn-success btn-lg\">Yes</a>
                             <button class=\"btn btn-default btn-lg mb-control-close\">No</button>
@@ -434,188 +564,192 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
 
         <script type=\"text/javascript\">
             var path = \"";
-        // line 304
+        // line 400
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img"), "html", null, true);
         echo "\";
         </script>
         <!-- START PLUGINS -->
         <script type=\"text/javascript\" src=\"";
-        // line 307
+        // line 403
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
         <script type=\"text/javascript\" src=\"";
-        // line 308
+        // line 404
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/jquery/jquery-ui.min.js"), "html", null, true);
         echo "\"></script>
         <script type=\"text/javascript\" src=\"";
-        // line 309
+        // line 405
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/bootstrap/bootstrap.min.js"), "html", null, true);
         echo "\"></script>        
         <!-- END PLUGINS -->
 
         <!-- START THIS PAGE PLUGINS-->        
         <script type='text/javascript' src=\"";
-        // line 313
+        // line 409
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/icheck/icheck.min.js"), "html", null, true);
         echo "\"></script>        
         <script type=\"text/javascript\" src=\"";
-        // line 314
+        // line 410
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"), "html", null, true);
         echo "\"></script>
         <script type=\"text/javascript\" src=\"";
-        // line 315
+        // line 411
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/scrolltotop/scrolltopcontrol.js"), "html", null, true);
         echo "\"></script>
         
         <script type=\"text/javascript\" src=\"";
-        // line 317
+        // line 413
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/morris/raphael-min.js"), "html", null, true);
         echo "\"></script>
         <script type=\"text/javascript\" src=\"";
-        // line 318
+        // line 414
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/morris/morris.min.js"), "html", null, true);
         echo "\"></script>       
-        <script type=\"text/javascript\" src=\"";
-        // line 319
+  <!--      <script type=\"text/javascript\" src=\"";
+        // line 415
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/rickshaw/d3.v3.js"), "html", null, true);
         echo "\"></script>
         <script type=\"text/javascript\" src=\"";
-        // line 320
+        // line 416
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/rickshaw/rickshaw.min.js"), "html", null, true);
         echo "\"></script>
-        <script type='text/javascript' src=\"";
-        // line 321
+      -->  <script type='text/javascript' src=\"";
+        // line 417
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"), "html", null, true);
         echo "\"></script>
         <script type='text/javascript' src=\"";
-        // line 322
+        // line 418
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"), "html", null, true);
         echo "\"></script>                
         <script type='text/javascript' src=\"";
-        // line 323
+        // line 419
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/bootstrap/bootstrap-datepicker.js"), "html", null, true);
         echo "\"></script>                
         <script type=\"text/javascript\" src=\"";
-        // line 324
+        // line 420
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/owl/owl.carousel.min.js"), "html", null, true);
-        echo "\"></script>                 
+        echo "\"></script>               
+        <script type=\"text/javascript\" src=\"";
+        // line 421
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/bootstrap/bootstrap-select.js"), "html", null, true);
+        echo "\"></script>
+        
         
         <script type=\"text/javascript\" src=\"";
-        // line 326
+        // line 424
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/moment.min.js"), "html", null, true);
         echo "\"></script>
         <script type=\"text/javascript\" src=\"";
-        // line 327
+        // line 425
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins/daterangepicker/daterangepicker.js"), "html", null, true);
         echo "\"></script>
         <!-- END THIS PAGE PLUGINS-->        
 
         <!-- START TEMPLATE -->
         <script type=\"text/javascript\" src=\"";
-        // line 331
+        // line 429
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/settings.js"), "html", null, true);
         echo "\"></script>
-        
+    <!--   
         <script type=\"text/javascript\" src=\"";
-        // line 333
+        // line 431
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/plugins.js"), "html", null, true);
         echo "\"></script>        
-        <script type=\"text/javascript\" src=\"";
-        // line 334
+        --><script type=\"text/javascript\" src=\"";
+        // line 432
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/actions.js"), "html", null, true);
         echo "\"></script>
-        
+      <!--  
         <script type=\"text/javascript\" src=\"";
-        // line 336
+        // line 434
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/demo_dashboard.js"), "html", null, true);
         echo "\"></script>
-
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS --> 
         ";
-        // line 340
+        // line 437
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 342
+        // line 439
         echo "
     </body>
 </html>
 ";
         
-        $__internal_25a133dfe665fbd89a7cb53049c610ccf7b7b4847295deff919c62b69bcc6cb7->leave($__internal_25a133dfe665fbd89a7cb53049c610ccf7b7b4847295deff919c62b69bcc6cb7_prof);
+        $__internal_271982e06482af9d16026e609c8c91f17c8ef66dd6bebc7e54bdaff8956d56e8->leave($__internal_271982e06482af9d16026e609c8c91f17c8ef66dd6bebc7e54bdaff8956d56e8_prof);
 
         
-        $__internal_8c6e274c8e1d25f248c981458a5abb584b387fd29329fa6bc8ed26d4566c7a73->leave($__internal_8c6e274c8e1d25f248c981458a5abb584b387fd29329fa6bc8ed26d4566c7a73_prof);
+        $__internal_c8dfbf97bb3459576a5c1e204808f098ba14d466b3f28e4c487af73bababb070->leave($__internal_c8dfbf97bb3459576a5c1e204808f098ba14d466b3f28e4c487af73bababb070_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_8f5c02294c19805d50ed20b8ba03e27f289e76240ac9a29fd19d6440724e1a15 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_8f5c02294c19805d50ed20b8ba03e27f289e76240ac9a29fd19d6440724e1a15->enter($__internal_8f5c02294c19805d50ed20b8ba03e27f289e76240ac9a29fd19d6440724e1a15_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_87c1e419ce25987d27f0866709013b9f33fb507b15daa103be550e05424f1780 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_87c1e419ce25987d27f0866709013b9f33fb507b15daa103be550e05424f1780->enter($__internal_87c1e419ce25987d27f0866709013b9f33fb507b15daa103be550e05424f1780_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_af808591d2b0a837c5c9c78648631b04a68b6bb9f3dd147074ee4c0e26a32fa5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_af808591d2b0a837c5c9c78648631b04a68b6bb9f3dd147074ee4c0e26a32fa5->enter($__internal_af808591d2b0a837c5c9c78648631b04a68b6bb9f3dd147074ee4c0e26a32fa5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_3ac80163b5a46300370a509974776a2212a40fcc63101459b85a3afa62ef61fc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_3ac80163b5a46300370a509974776a2212a40fcc63101459b85a3afa62ef61fc->enter($__internal_3ac80163b5a46300370a509974776a2212a40fcc63101459b85a3afa62ef61fc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Welcome!";
         
-        $__internal_af808591d2b0a837c5c9c78648631b04a68b6bb9f3dd147074ee4c0e26a32fa5->leave($__internal_af808591d2b0a837c5c9c78648631b04a68b6bb9f3dd147074ee4c0e26a32fa5_prof);
+        $__internal_3ac80163b5a46300370a509974776a2212a40fcc63101459b85a3afa62ef61fc->leave($__internal_3ac80163b5a46300370a509974776a2212a40fcc63101459b85a3afa62ef61fc_prof);
 
         
-        $__internal_8f5c02294c19805d50ed20b8ba03e27f289e76240ac9a29fd19d6440724e1a15->leave($__internal_8f5c02294c19805d50ed20b8ba03e27f289e76240ac9a29fd19d6440724e1a15_prof);
+        $__internal_87c1e419ce25987d27f0866709013b9f33fb507b15daa103be550e05424f1780->leave($__internal_87c1e419ce25987d27f0866709013b9f33fb507b15daa103be550e05424f1780_prof);
 
     }
 
     // line 6
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_d131fe6893431f59366c9446a12b9e9db4e568c02f729986ba2ca44d614e184d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d131fe6893431f59366c9446a12b9e9db4e568c02f729986ba2ca44d614e184d->enter($__internal_d131fe6893431f59366c9446a12b9e9db4e568c02f729986ba2ca44d614e184d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_7c9fe20570e07e2539d3d04c12bcf7d72c836bc628cf9378acb679f7fd0260f3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_7c9fe20570e07e2539d3d04c12bcf7d72c836bc628cf9378acb679f7fd0260f3->enter($__internal_7c9fe20570e07e2539d3d04c12bcf7d72c836bc628cf9378acb679f7fd0260f3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        $__internal_0aa8c57999bcdc09f1a576da89a82c9852dfb09463ed297cc02ed3bdbdee3884 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_0aa8c57999bcdc09f1a576da89a82c9852dfb09463ed297cc02ed3bdbdee3884->enter($__internal_0aa8c57999bcdc09f1a576da89a82c9852dfb09463ed297cc02ed3bdbdee3884_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
-
-        
-        $__internal_0aa8c57999bcdc09f1a576da89a82c9852dfb09463ed297cc02ed3bdbdee3884->leave($__internal_0aa8c57999bcdc09f1a576da89a82c9852dfb09463ed297cc02ed3bdbdee3884_prof);
+        $__internal_0e0c2480331b51aaf30a3105886aec62ca0d8348cdb6e921d8001349ebf882bd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0e0c2480331b51aaf30a3105886aec62ca0d8348cdb6e921d8001349ebf882bd->enter($__internal_0e0c2480331b51aaf30a3105886aec62ca0d8348cdb6e921d8001349ebf882bd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         
-        $__internal_d131fe6893431f59366c9446a12b9e9db4e568c02f729986ba2ca44d614e184d->leave($__internal_d131fe6893431f59366c9446a12b9e9db4e568c02f729986ba2ca44d614e184d_prof);
+        $__internal_0e0c2480331b51aaf30a3105886aec62ca0d8348cdb6e921d8001349ebf882bd->leave($__internal_0e0c2480331b51aaf30a3105886aec62ca0d8348cdb6e921d8001349ebf882bd_prof);
+
+        
+        $__internal_7c9fe20570e07e2539d3d04c12bcf7d72c836bc628cf9378acb679f7fd0260f3->leave($__internal_7c9fe20570e07e2539d3d04c12bcf7d72c836bc628cf9378acb679f7fd0260f3_prof);
 
     }
 
-    // line 264
+    // line 360
     public function block_body($context, array $blocks = array())
     {
-        $__internal_6f217a478f6f5e80fb5d141f8d9b9fdca880455d50b71f600e3eeaab4b70a84c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_6f217a478f6f5e80fb5d141f8d9b9fdca880455d50b71f600e3eeaab4b70a84c->enter($__internal_6f217a478f6f5e80fb5d141f8d9b9fdca880455d50b71f600e3eeaab4b70a84c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a39d841d83e4e632200eac2087b98012cac6f037ce07f606cd36ae2c5a24d341 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a39d841d83e4e632200eac2087b98012cac6f037ce07f606cd36ae2c5a24d341->enter($__internal_a39d841d83e4e632200eac2087b98012cac6f037ce07f606cd36ae2c5a24d341_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_a29d783b43662bd8c4103571fb216de8b4f6feec2fcddd9815dca48c3e7175b7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a29d783b43662bd8c4103571fb216de8b4f6feec2fcddd9815dca48c3e7175b7->enter($__internal_a29d783b43662bd8c4103571fb216de8b4f6feec2fcddd9815dca48c3e7175b7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
-
-        
-        $__internal_a29d783b43662bd8c4103571fb216de8b4f6feec2fcddd9815dca48c3e7175b7->leave($__internal_a29d783b43662bd8c4103571fb216de8b4f6feec2fcddd9815dca48c3e7175b7_prof);
+        $__internal_4c6132fd07f6bc9606b2283e88380cf2e46844c31cf5631aaff52223579df457 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_4c6132fd07f6bc9606b2283e88380cf2e46844c31cf5631aaff52223579df457->enter($__internal_4c6132fd07f6bc9606b2283e88380cf2e46844c31cf5631aaff52223579df457_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         
-        $__internal_6f217a478f6f5e80fb5d141f8d9b9fdca880455d50b71f600e3eeaab4b70a84c->leave($__internal_6f217a478f6f5e80fb5d141f8d9b9fdca880455d50b71f600e3eeaab4b70a84c_prof);
+        $__internal_4c6132fd07f6bc9606b2283e88380cf2e46844c31cf5631aaff52223579df457->leave($__internal_4c6132fd07f6bc9606b2283e88380cf2e46844c31cf5631aaff52223579df457_prof);
+
+        
+        $__internal_a39d841d83e4e632200eac2087b98012cac6f037ce07f606cd36ae2c5a24d341->leave($__internal_a39d841d83e4e632200eac2087b98012cac6f037ce07f606cd36ae2c5a24d341_prof);
 
     }
 
-    // line 340
+    // line 437
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_9b8e588791e8671864979b2c631f4938628b642901476621896bfd9a770a6695 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_9b8e588791e8671864979b2c631f4938628b642901476621896bfd9a770a6695->enter($__internal_9b8e588791e8671864979b2c631f4938628b642901476621896bfd9a770a6695_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_9fd67f9c47f582eeb88d51f76de74a5563d338dc48c3068b2720d62bb4547ded = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_9fd67f9c47f582eeb88d51f76de74a5563d338dc48c3068b2720d62bb4547ded->enter($__internal_9fd67f9c47f582eeb88d51f76de74a5563d338dc48c3068b2720d62bb4547ded_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_9074e565f8bfd2e1b8e06edef46a5c735bcd0a682f3254c733342ddab09cc063 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9074e565f8bfd2e1b8e06edef46a5c735bcd0a682f3254c733342ddab09cc063->enter($__internal_9074e565f8bfd2e1b8e06edef46a5c735bcd0a682f3254c733342ddab09cc063_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_a004e0ed66c84962b0b1c9b71d7181cf36fcd8f595aa6bb3daefec6e37ade750 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a004e0ed66c84962b0b1c9b71d7181cf36fcd8f595aa6bb3daefec6e37ade750->enter($__internal_a004e0ed66c84962b0b1c9b71d7181cf36fcd8f595aa6bb3daefec6e37ade750_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 341
+        // line 438
         echo "        ";
         
-        $__internal_9074e565f8bfd2e1b8e06edef46a5c735bcd0a682f3254c733342ddab09cc063->leave($__internal_9074e565f8bfd2e1b8e06edef46a5c735bcd0a682f3254c733342ddab09cc063_prof);
+        $__internal_a004e0ed66c84962b0b1c9b71d7181cf36fcd8f595aa6bb3daefec6e37ade750->leave($__internal_a004e0ed66c84962b0b1c9b71d7181cf36fcd8f595aa6bb3daefec6e37ade750_prof);
 
         
-        $__internal_9b8e588791e8671864979b2c631f4938628b642901476621896bfd9a770a6695->leave($__internal_9b8e588791e8671864979b2c631f4938628b642901476621896bfd9a770a6695_prof);
+        $__internal_9fd67f9c47f582eeb88d51f76de74a5563d338dc48c3068b2720d62bb4547ded->leave($__internal_9fd67f9c47f582eeb88d51f76de74a5563d338dc48c3068b2720d62bb4547ded_prof);
 
     }
 
@@ -631,7 +765,7 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
 
     public function getDebugInfo()
     {
-        return array (  613 => 341,  604 => 340,  587 => 264,  570 => 6,  552 => 5,  539 => 342,  537 => 340,  530 => 336,  525 => 334,  521 => 333,  516 => 331,  509 => 327,  505 => 326,  500 => 324,  496 => 323,  492 => 322,  488 => 321,  484 => 320,  480 => 319,  476 => 318,  472 => 317,  467 => 315,  463 => 314,  459 => 313,  452 => 309,  448 => 308,  444 => 307,  438 => 304,  411 => 280,  394 => 265,  392 => 264,  374 => 249,  370 => 248,  305 => 186,  296 => 180,  287 => 174,  278 => 168,  220 => 113,  216 => 112,  203 => 102,  199 => 101,  189 => 94,  185 => 93,  169 => 80,  165 => 79,  149 => 66,  145 => 65,  136 => 59,  132 => 58,  123 => 52,  119 => 51,  104 => 39,  98 => 38,  88 => 35,  77 => 31,  57 => 13,  53 => 11,  51 => 10,  47 => 9,  41 => 7,  39 => 6,  35 => 5,  29 => 1,);
+        return array (  747 => 438,  738 => 437,  721 => 360,  704 => 6,  686 => 5,  673 => 439,  671 => 437,  665 => 434,  660 => 432,  656 => 431,  651 => 429,  644 => 425,  640 => 424,  634 => 421,  630 => 420,  626 => 419,  622 => 418,  618 => 417,  614 => 416,  610 => 415,  606 => 414,  602 => 413,  597 => 411,  593 => 410,  589 => 409,  582 => 405,  578 => 404,  574 => 403,  568 => 400,  541 => 376,  524 => 361,  522 => 360,  504 => 345,  500 => 344,  435 => 282,  426 => 276,  417 => 270,  408 => 264,  356 => 214,  352 => 212,  342 => 206,  338 => 205,  315 => 185,  311 => 184,  297 => 173,  293 => 172,  273 => 155,  269 => 154,  251 => 139,  247 => 138,  236 => 130,  232 => 129,  221 => 121,  217 => 120,  211 => 116,  208 => 115,  206 => 114,  199 => 109,  196 => 108,  185 => 100,  168 => 86,  157 => 78,  149 => 73,  141 => 68,  130 => 59,  127 => 58,  125 => 57,  104 => 39,  98 => 38,  88 => 35,  77 => 31,  57 => 13,  53 => 11,  51 => 10,  47 => 9,  41 => 7,  39 => 6,  35 => 5,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -690,79 +824,175 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
                             </div>
                         </div>                                                                        
                     </li>
-                    <li class=\"active\" ><a href=\"#\"><span class=\"fa fa-dashboard\"></span> <span class=\"xn-text\">Dashboard</span></a></li>
-                    <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-graduation-cap\"></span> <span class=\"xn-text\">Gestion des Eleves</span></a>
-                        <ul>
-                            <li><a href=\"{{ path('addEleve') }}\"><span class=\"xn-text\">Ajouter Eleve</span></a></li>
-                            <li><a href=\"{{ path('listEleves') }}\"><span class=\"xn-text\">Liste des eleves </span></a></li>
-                        </ul>
+
+                    <li class=\"active\" >
+                        <a href=\"#\">
+                            <span class=\"fa fa-dashboard\"></span> 
+                            <span class=\"xn-text\">Dashboard</span>
+                        </a>
                     </li>
-                    <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-male\"></span> <span class=\"xn-text\">Gestion des Parents</span></a>
-                        <ul>
-                            <li><a href=\"{{ path('addParental') }}\"><span class=\"xn-text\">Ajouter Parent</span></a></li>
-                            <li><a href=\"{{ path('listParentals') }}\"><span class=\"xn-text\">Liste des Parents </span></a></li>
-                        </ul>
-                    </li>
-                     <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-briefcase\"></span> <span class=\"xn-text\">Gestion des Enseignants</span></a>
-                        <ul>
-                            <li><a href=\"{{ path('addEnseignant') }}\"><span class=\"xn-text\">Ajouter Enseignant</span></a></li>
-                            <li><a href=\"{{ path('listEnseignants') }}\"><span class=\"xn-text\">Liste des Enseignants </span></a></li>
-                        </ul>
-                    </li>
-                     <!-- <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-book\"></span> <span class=\"xn-text\">Gestion des Matieres</span></a>
-                        <ul>
-                            <li><a href=\"#\"><span class=\"xn-text\">Ajouter Matiere</span></a></li>
-                            <li><a href=\"dashboard.html\"><span class=\"xn-text\">Liste des Matieres </span></a></li>
-                        </ul>
-                    </li> -->
-                     <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-users\"></span> <span class=\"xn-text\">Gestion des Classes</span></a>
-                        <ul>
-                            <li><a href=\"{{ path('addClasse') }}\"><span class=\"xn-text\">Ajouter Classe</span></a></li>
-                            <li><a href=\"{{ path('listClasses') }}\"><span class=\"xn-text\">Liste des Classes </span></a></li>
-                        </ul>
-                    </li>
-                     <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-table\"></span> <span class=\"xn-text\">Gestion des Emplois de temps</span></a>
-                        <ul>
-                            <li><a href=\"#\"><span class=\"xn-text\">Ajouter Emploi de temps</span></a></li>
-                            <li><a href=\"#\"><span class=\"xn-text\">Liste des Emplois de temps </span></a></li>
-                        </ul>
-                    </li>
-                     <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-th\"></span> <span class=\"xn-text\">Gestion des Salles</span></a>
-                        <ul>
-                            <li><a href=\"{{ path('addSalle') }}\"><span class=\"xn-text\">Ajouter Salle</span></a></li>
-                            <li><a href=\"{{ path('listSalles') }}\"><span class=\"xn-text\">Liste des Salles </span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href=\"#\"><span class=\"fa fa-check-square-o\"></span> <span class=\"xn-text\">Gestion des Retards et absences</span></a></li>
-                    <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-bus\"></span> <span class=\"xn-text\">Transport</span></a>
-                        <ul>
-                            <li><a href=\"{{ path('addTransport') }}\"><span class=\"xn-text\">Ajouter Transport</span></a></li>
-                            <li><a href=\"{{ path('listTransports') }}\"><span class=\"xn-text\">Liste des Transports </span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href=\"#\"><span class=\"fa fa-money\"></span> <span class=\"xn-text\">Payement</span></a></li>
-                    <li><a href=\"#\"><span class=\"fa fa-envelope-o\"></span> <span class=\"xn-text\">Messagerie</span></a></li>
-                    <li><a href=\"#\"><span class=\"fa fa-leanpub\"></span> <span class=\"xn-text\">Ressources pédagogiques</span></a></li>
-                    <li><a href=\"#\"><span class=\"fa fa-table\"></span> <span class=\"xn-text\">Plannings des examens</span></a></li>
-                    <li class=\"xn-openable\">
-                        <a href=\"#\"><span class=\"fa fa-cutlery\"></span> <span class=\"xn-text\">Menu de cantine</span></a>
-                        <ul>
-                            <li><a href=\"{{ path('addMenu') }}\"><span class=\"xn-text\">Ajouter Menu</span></a></li>
-                            <li><a href=\"{{ path('listMenus') }}\"><span class=\"xn-text\">Liste des Menus </span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href=\"#\"><span class=\"fa fa-check\"></span> <span class=\"xn-text\">Bultin</span></a></li>
-                    <li><a href=\"#\"></a></li>
+
+                    <!-- Menu Navigation pour Administrateur -->
+
+                    {% if is_granted(\"IS_AUTHENTICATED_REMEMBERED\") %}
+                        {% if 'ROLE_ENSEIGNANT' in app.user.roles %}
+                           
+                            <!-- Gestion des classes -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\">
+                                    <span class=\"fa fa-users\"></span> 
+                                    <span class=\"xn-text\">Gestion des Classes</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href=\"{{ path('enseignant_liste_classes', {'id': app.user.id}) }}\">
+                                            <span class=\"xn-text\">Liste des Classes </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=\"{{path('matiere_program_annual_add',{ 'id': app.user.id})}}\">
+                                            <span class=\"xn-text\">Programme Annuel </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=\"{{path('show_travail',{ 'id': app.user.id})}}\">
+                                            <span class=\"xn-text\">Travail réalisé </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Gestion des absences/retard -->
+                            <li>
+                                <a href=\"{{path('absence_index')}}\">
+                                    <span class=\"fa fa-check-square-o\"></span> 
+                                    <span class=\"xn-text\">Gestion des Retards et absences</span>
+                                </a>
+                            </li>
+                            <!-- Gestion des emplois du temps -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\">
+                                    <span class=\"fa fa-table\">
+                                    </span> 
+                                    <span class=\"xn-text\">Gestion des Emplois de temps</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href=\"{{ path('program_show_enseignant', { 'id': app.user.id}) }}\">
+                                            <span class=\"xn-text\">Mon Emploi du temps</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                           
+                        {% endif %}
+                    {% endif %}
+
+                    <!-- Fin Menu Navigation pour Enseignant -->
+
+                    <!-- Menu Navigation pour Administrateur -->
+
+                    {% if is_granted(\"IS_AUTHENTICATED_REMEMBERED\") %}
+                        {% if 'ROLE_ADMIN' in app.user.roles %}
+                            <!-- Gestion des élèves -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-graduation-cap\"></span> <span class=\"xn-text\">Gestion des Eleves</span></a>
+                                <ul>
+                                    <li><a href=\"{{ path('addEleve') }}\"><span class=\"xn-text\">Ajouter Eleve</span></a></li>
+                                    <li><a href=\"{{ path('listEleves') }}\"><span class=\"xn-text\">Liste des eleves </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gestion des parents -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-male\"></span> <span class=\"xn-text\">Gestion des Parents</span></a>
+                                <ul>
+                                    <li><a href=\"{{ path('addParental') }}\"><span class=\"xn-text\">Ajouter Parent</span></a></li>
+                                    <li><a href=\"{{ path('listParentals') }}\"><span class=\"xn-text\">Liste des Parents </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gestion des enseignants -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-briefcase\"></span> <span class=\"xn-text\">Gestion des Enseignants</span></a>
+                                <ul>
+                                    <li><a href=\"{{ path('addEnseignant') }}\"><span class=\"xn-text\">Ajouter Enseignant</span></a></li>
+                                    <li><a href=\"{{ path('listEnseignants') }}\"><span class=\"xn-text\">Liste des Enseignants </span></a></li>
+                                </ul>
+                            </li>
+                            <!-- <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-book\"></span> <span class=\"xn-text\">Gestion des Matieres</span></a>
+                                <ul>
+                                    <li><a href=\"#\"><span class=\"xn-text\">Ajouter Matiere</span></a></li>
+                                    <li><a href=\"dashboard.html\"><span class=\"xn-text\">Liste des Matieres </span></a></li>
+                                </ul>
+                            </li> -->
+
+                            <!-- Gestion des classes -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-users\"></span> <span class=\"xn-text\">Gestion des Classes</span></a>
+                                <ul>
+                                    <li><a href=\"{{ path('addClasse') }}\"><span class=\"xn-text\">Ajouter Classe</span></a></li>
+                                    <li><a href=\"{{ path('listClasses') }}\"><span class=\"xn-text\">Liste des Classes </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gestion des emplois du temps -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-table\"></span> <span class=\"xn-text\">Gestion des Emplois de temps</span></a>
+                                <ul>
+                                    <li><a href=\"#\"><span class=\"xn-text\">Ajouter Emploi de temps</span></a></li>
+                                    <li><a href=\"#\"><span class=\"xn-text\">Liste des Emplois de temps </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gestion des salles -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-th\"></span> <span class=\"xn-text\">Gestion des Salles</span></a>
+                                <ul>
+                                    <li><a href=\"{{ path('addSalle') }}\"><span class=\"xn-text\">Ajouter Salle</span></a></li>
+                                    <li><a href=\"{{ path('listSalles') }}\"><span class=\"xn-text\">Liste des Salles </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Gestion des absences/retard -->
+                            <li><a href=\"#\"><span class=\"fa fa-check-square-o\"></span> <span class=\"xn-text\">Gestion des Retards et absences</span></a></li>
+
+                            <!-- Transport -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-bus\"></span> <span class=\"xn-text\">Transport</span></a>
+                                <ul>
+                                    <li><a href=\"{{ path('addTransport') }}\"><span class=\"xn-text\">Ajouter Transport</span></a></li>
+                                    <li><a href=\"{{ path('listTransports') }}\"><span class=\"xn-text\">Liste des Transports </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Paiement -->
+                            <li><a href=\"#\"><span class=\"fa fa-money\"></span> <span class=\"xn-text\">Payement</span></a></li>
+
+                            <!-- Messagerie -->
+                            <li><a href=\"#\"><span class=\"fa fa-envelope-o\"></span> <span class=\"xn-text\">Messagerie</span></a></li>
+
+                            <!-- Ressources pédagogiques -->
+                            <li><a href=\"#\"><span class=\"fa fa-leanpub\"></span> <span class=\"xn-text\">Ressources pédagogiques</span></a></li>
+
+                            <!-- Planning des examens -->
+                            <li><a href=\"#\"><span class=\"fa fa-table\"></span> <span class=\"xn-text\">Plannings des examens</span></a></li>
+
+                            <!-- Menu cantine -->
+                            <li class=\"xn-openable\">
+                                <a href=\"#\"><span class=\"fa fa-cutlery\"></span> <span class=\"xn-text\">Menu de cantine</span></a>
+                                <ul>
+                                    <li><a href=\"{{ path('addMenu') }}\"><span class=\"xn-text\">Ajouter Menu</span></a></li>
+                                    <li><a href=\"{{ path('listMenus') }}\"><span class=\"xn-text\">Liste des Menus </span></a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Bulletin -->
+                            <li><a href=\"#\"><span class=\"fa fa-check\"></span> <span class=\"xn-text\">Bulletin</span></a></li>
+                        {% endif %}        
+                    {% endif %}
                     
-                    
+                    <!-- Fin Menu Navigation pour Administrateur -->
                 </ul>
                 <!-- END X-NAVIGATION -->
             </div>
@@ -962,12 +1192,14 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
         
         <script type=\"text/javascript\" src=\"{{ asset('js/plugins/morris/raphael-min.js') }}\"></script>
         <script type=\"text/javascript\" src=\"{{ asset('js/plugins/morris/morris.min.js') }}\"></script>       
-        <script type=\"text/javascript\" src=\"{{ asset('js/plugins/rickshaw/d3.v3.js') }}\"></script>
+  <!--      <script type=\"text/javascript\" src=\"{{ asset('js/plugins/rickshaw/d3.v3.js') }}\"></script>
         <script type=\"text/javascript\" src=\"{{ asset('js/plugins/rickshaw/rickshaw.min.js') }}\"></script>
-        <script type='text/javascript' src=\"{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}\"></script>
+      -->  <script type='text/javascript' src=\"{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}\"></script>
         <script type='text/javascript' src=\"{{ asset('js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}\"></script>                
         <script type='text/javascript' src=\"{{ asset('js/plugins/bootstrap/bootstrap-datepicker.js') }}\"></script>                
-        <script type=\"text/javascript\" src=\"{{ asset('js/plugins/owl/owl.carousel.min.js') }}\"></script>                 
+        <script type=\"text/javascript\" src=\"{{ asset('js/plugins/owl/owl.carousel.min.js') }}\"></script>               
+        <script type=\"text/javascript\" src=\"{{ asset('js/plugins/bootstrap/bootstrap-select.js') }}\"></script>
+        
         
         <script type=\"text/javascript\" src=\"{{ asset('js/plugins/moment.min.js') }}\"></script>
         <script type=\"text/javascript\" src=\"{{ asset('js/plugins/daterangepicker/daterangepicker.js') }}\"></script>
@@ -975,12 +1207,11 @@ class __TwigTemplate_d76c77c54cef8e2e5f5cde7e9ab1d0a900c992402cd873356655bb31b47
 
         <!-- START TEMPLATE -->
         <script type=\"text/javascript\" src=\"{{ asset('js/settings.js') }}\"></script>
-        
+    <!--   
         <script type=\"text/javascript\" src=\"{{ asset('js/plugins.js') }}\"></script>        
-        <script type=\"text/javascript\" src=\"{{ asset('js/actions.js') }}\"></script>
-        
+        --><script type=\"text/javascript\" src=\"{{ asset('js/actions.js') }}\"></script>
+      <!--  
         <script type=\"text/javascript\" src=\"{{ asset('js/demo_dashboard.js') }}\"></script>
-
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS --> 
         {% block javascripts %}

@@ -1,26 +1,83 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
 {% block body %}
-<div class="container">
-	{{ form_start(form) }}
-		<div class="form-group">
-			{{ form_label(form.eleve) }}
-		    {{ form_widget(form.eleve) }}
-		    {{ form_errors(form.eleve) }}
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12">  
+			{{ form_start(form, { 'attr' : { 'class': 'form-horizontal' } }) }}
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							{{'evaluation.add'|trans}}
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							{{ form_label(form.eleve, null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group">
+									{{ form_widget(form.eleve,{ 'id':'selectEleve', 'label_attr': {'class': 'form-control select'} }) }}
+				  				</div>
+						    {{ form_errors(form.eleve) }}
+							</div>
+						</div>
+						<div class="form-group">
+							{{ form_label(form.type, null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group">
+									{{ form_widget(form.type,{ 'id':'selectType', 'label_attr': {'class': 'form-control select'} }) }}
+				  				</div>
+						    {{ form_errors(form.type) }}
+							</div>
+						</div>
+						<div class="form-group">
+							{{ form_label(form.date, null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} }) }}
+							<div class="col-md-6 col-xs-12">
+								<div class="input-group date">
+									 {{ form_widget(form.date) }}
+                                    <span class="input-group-addon">
+                                    	<span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+				  				{{ form_errors(form.date) }}
+				  			</div>
+						</div>
+						<div class="form-group">
+							{{ form_label(form.commentaire, null ,{ 'label_attr': {'class': 'col-md-3 col-xs-12 control-label'} })}}
+							<div class="col-md-6 col-xs-12">
+								{{ form_widget(form.commentaire)  }}
+				  				{{ form_errors(form.commentaire) }}
+				  			</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">                                    
+					<input type="submit" value="{{'add'|trans}}" class="btn btn-primary pull-right" />
+				</div>
+			{{ form_end(form) }}
 		</div>
-		<div class="form-group">
-			{{ form_label(form.date) }}
-		    {{ form_widget(form.date) }}
-		    {{ form_errors(form.date) }}
-		</div>
-		<div class="form-group">
-			{{ form_label(form.commentaire) }}
-		    {{ form_widget(form.commentaire) }}
-		    {{ form_errors(form.commentaire) }}
-		</div>
-		
-		<button type="submit">Chercher</button>
-	{{ form_end(form) }}
+	</div>
 </div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+	
+<script type="text/javascript">
+
+     $( document ).ready( function() {
+
+                $('.dp-3').datepicker({startView: 2,format: 'yyyy-mm-dd' });
+                $('#selectEleve').selectpicker({
+ 					style: 'btn-default',
+  					size: 4
+				});
+				 $('#selectType').selectpicker({
+ 					style: 'btn-default',
+  					size: 4
+				});
+            });
+</script>
 
 {% endblock %}

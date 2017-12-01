@@ -52,3 +52,17 @@
     </div>
     
 {% endblock %}               
+
+
+{% block javascripts %}
+	<script type="text/javascript" src="{{ asset('js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    
+<script type="text/javascript">
+	
+     $( document ).ready( function() {
+
+                $('#customers2').dataTable();
+            });
+</script>
+
+{% endblock %}

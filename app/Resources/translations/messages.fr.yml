@@ -10,7 +10,7 @@ navbar:
     link8: liste des parents
     link9: ajouter ecole
     link10: liste des ecoles
-    link11: Mon profile
+    link11: Mon profil
     link12: Deconnexion
     link13: Connexion
     link14: ajouter matiere
@@ -53,7 +53,7 @@ form:
 edit: Modifier
 add: Ajouter
 admin: Administrateur
-student: Elève
+student: Eleve
 teacher: Enseignant
 parent: Parent
 school: Ecole
@@ -64,12 +64,28 @@ parents: Parents
 schools: Ecoles
 list: Liste des
 delete: supprimer
-profile: Profile
+profile: Profil
 matiere: Matiere
+matieres: Matieres
 annee: Année
+classe: Classe
+classes: Classes
+niveau: Niveau
+note: Note
+
+
+eleve:
+    title: Elèves
+    show: Afficher les élèves
+    nom: Nom de l'élève
+    prenom: Prénom de l'élève
+    nom_prenom: Nom et prénom de l'élève
 
 cours: 
+    title: Cours
+    name: Nom du cours
     add: Ajouter un cours
+    list: Liste des cours
     support: 
         title: Support de cours
         add: Ajouter un support
@@ -78,6 +94,7 @@ cours:
         add: Ajouter une annexe
 
 message:
+    title: message
     send: Envoyer message
 
 devoir:
@@ -86,6 +103,7 @@ devoir:
         add: Ajouter un devoir maison
 
 evaluation:
+    title: Evaluation
     add: Ajouter une evaluation
 
 global:
@@ -94,6 +112,13 @@ global:
     add: Ajouter
     delete: supprimer
     edit: Modifier
+    show: Afficher
+    search: Rechercher
+    parcourir: Parcourir
+    action: Action
+    remark: Remarque
+    date: Date
+    type: Type
     annual:
         program: Programme Annuel
 
@@ -101,3 +126,14 @@ absence:
     title: Absence
     add: Ajouter une absence
     manage: Gérer les absences
+    date: Date d'absence
+
+retard:
+    title: Retard
+    add: Ajouter un retard
+    manage: Gérer les retards
+    date: Date de retard
+
+travail: 
+    title: Travail Réalisé
+    add: Ajouter un travail

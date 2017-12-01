@@ -1,23 +1,80 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseList.html.twig' %}
 
-{% block body %}
-<h1>{{'list'|trans}} {{'teachers'|trans}}</h1>
-{% dump(data) %}
-	<a href="{{ path('showEnseignant', { 'id': data.enseignant.id}) }}">{{'global.program'|trans}}</a>
-	<a href="{{ path('absence_index')}}">{{'absence.manage'|trans}}</a>
-	<a href="{{path('program_add',{ 'id': data.enseignant.id})}}">{{'global.annual.program'|trans}}</a>
+{% block title %}
+	{{'list'|trans ~' '~ 'classes'|trans ~'-'~ 'matieres'|trans}}
+{% endblock %}
+
+
+{% block bodyList %}
 			
-	<ol>
+    <div class="table-responsive">
+        <table id="customers2" class="table datatable">
+            <thead>
+                <tr>
+                    <th>{{'school'|trans}}</th>
+                    <th>{{'classe'|trans}}</th>
+                    <th>{{'annee'|trans}}</th>
+                    <th>{{'niveau'|trans}}</th>
+                    <th>{{'matiere'|trans}}</th>
+                    <th>{{'eleve.title'|trans}}</th>
+                    <th>{{'global.program'|trans}}</th>
+                    <th>{{'global.annual.program'|trans}}</th>
+                    <th>{{'absence.title'|trans}}</th>
+                    <th>{{'message.title'|trans}}</th>
+                </tr>
+            </thead>
+            {% dump(data) %}
+            <tbody>
+                {% for classe in data.classes %}
+					<tr>
+						<td>{{ classe.classe.ecole.nom}} </td>
+						<td>{{ classe.classe.nom }}</td>
+						<td>{{ classe.classe.annee.nom}}</td>
+						<td>{{ classe.classe.annee.niveau}}</td>
+						<td>{{classe.matiere.nom}}</td>
+						<td class="text-center">
+							<a href="{{ path('showEleve', { 'idClasse': classe.classe.id, 'idMatiere': classe.matiere.id}) }}"> <i class="fa fa-eye" aria-hidden="true"></i>
+							</a>
+						</td>
+						<td class="text-center">
+							<a href="{{path('program_show_class',{ 'id': classe.classe.id})}}">
+								<i class="fa fa-tasks" aria-hidden="true"></i>
+							</a>
+						</td>
+						<td class="text-center">
+							{% if classe.programmeAnnuel is not null %}
+							<a href="{{asset(uploads_matiere_prog_annuel~'/'~classe.programmeAnnuel)}}">
+								<i class="fa fa-file" aria-hidden="true"></i>
+							</a>
+							{% endif %}
+						</td>
+						<td class="text-center">
+							<a href="{{path('absence_new',{ 'id': classe.classe.id})}}">
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</a>
+						</td>
+						<td class="text-center">
+							<a href="">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</a>
+						</td>
+					</tr>
+                {% endfor %}
+            </tbody>
+        </table>                                    
+    </div>
+    
+{% endblock %}  
 
-		{% for classe in data.classes %}
-			<li><a href="{{ path('showEleve', { 'idClasse': classe.classe.id, 'idMatiere': classe.matiere.id}) }}">
-				{{classe.classe.ecole.nom~' '~classe.classe.nom~' '~classe.classe.annee.nom~' '~classe.classe.annee.niveau~' '~classe.matiere.nom}}</a>
-				<a href="{{path('showClasse',{ 'id': classe.classe.id})}}">{{'global.program'|trans}}</a>
-				<a href="{{path('absence_new',{ 'id': classe.classe.id})}}">{{'absence.add'|trans}}</a>
-				<a href="">{{'message.send'|trans}}</a>
-			</li>
-		{% endfor %}
-
-	</ol>
+{% block javascripts %}
+	<script type="text/javascript" src="{{ asset('js/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    
+<script type="text/javascript">
 	
+     $( document ).ready( function() {
+
+                $('#customers2').dataTable();
+            });
+</script>
+
 {% endblock %}

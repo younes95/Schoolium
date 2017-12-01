@@ -1,31 +1,71 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseList.html.twig' %}
 
-{% block body %}
-<h1>{{'list'|trans}} {{'teachers'|trans}}</h1>
-{% dump(form) %}
-{% set i=0 %}
-	{% for ensmat in data %}
-		{% set formFile =  form[i].createView %}
+{% block bodyList %}
 
-	    {{ form_start(formFile) }}
-	    <label>{{ensmat.matiere.nom}}</label>
-		<label>{{ensmat.classe.nom}}</label>
-		<input hidden="hidden" name="idEnsMat{{i}}" value="{{ensmat.id}}" />
-		<input hidden="hidden" name="cpt" value="{{i}}" />
-		<input hidden="hidden" name="taille" value="{{ensmat|length}}" />
-		{% if ensmat.programmeAnnuel|slice(-4)!=".tmp" %}
-			<a href="{{asset(uploads_matiere_prog_annuel~'/'~ensmat.programmeAnnuel)}}">PDF</a>
-		{% endif %}
-		{{ form_widget(formFile.programmeAnnuel) }}
-	   	<button type="submit">{{'global.edit'|trans}}</button>
-	    {{ form_end(formFile) }}
-		{% if ensmat.programmeAnnuel|length==0 %}
-			<a href="" class="disabled">{{'global.delete'|trans}}</a>
-			{% else %}
-			<a href="">{{'global.delete'|trans}}</a>
-			{% endif %}
-		{% set i=i+1 %}
-	{% endfor %}
+ <div class="table-responsive">
+        <table id="customers2" class="table datatable">
+            <thead>
+                <tr>
+                    <th class="text-center">{{'matiere'|trans}}</th>
+                    <th class="text-center">{{'classe'|trans}}</th>
+                    <th class="text-center">{{'global.annual.program'|trans}}</th>
+                    <th class="text-center">{{'global.edit'|trans ~' '~ 'global.annual.program'|trans }}</th>
+                    <th class="text-center">{{'global.delete'|trans}}</th>
+                </tr>
+            </thead>
+            <tbody>
+            	{% set i=0 %}
+            	{% for ensmat in data %}
+            		<tr>
+						{% set formFile =  form[i].createView %}
+
+					    {{ form_start(formFile, { 'attr' : { 'class': 'form-horizontal' } }) }}
+					    <input hidden="hidden" name="idEnsMat{{i}}" value="{{ensmat.id}}" />
+						<input hidden="hidden" name="cpt" value="{{i}}" />
+						<input hidden="hidden" name="taille" value="{{ensmat|length}}" />
+
+					    <td class="text-center">
+					    	<label>{{ensmat.matiere.nom}}</label>
+						</td>
+						<td class="text-center">
+							<label>{{ensmat.classe.nom}}</label>
+						</td>
+
+						<td class="text-center">
+							{% if ensmat.programmeAnnuel is not null %}
+								<a class="btn btn-info" href="{{asset(uploads_matiere_prog_annuel~'/'~ensmat.programmeAnnuel)}}">
+									<i class="fa fa-file-text"></i>
+								</a> 
+							{% endif %}
+						</td>	
+						<td class="text-center">
+							<a class="file-input-wrapper btn btn-default  fileinput">
+                       			<span>{{'global.parcourir'|trans}}</span>
+                       			{{ form_widget(formFile.programmeAnnuel,{ 'label_attr': {'class': 'fileinput'} } ) }}
+				  			</a>
+							<button style="margin-left:5%;" type="submit" class="btn btn-success btn-condensed">
+								<i class="fa fa-check"></i>
+							</button>
+					   	</td>
+					    {{ form_end(formFile) }}
+					    <td class="text-center">
+							{% if ensmat.programmeAnnuel|length==0 %}
+								<a href="" class="disabled btn btn-danger btn-condensed">
+									<i class="fa fa-trash"></i>
+								</a>
+							{% else %}
+								<a class="btn btn-danger btn-condensed" href="{{path('matiere_program_annual_delete',{'id': ensmat.id})}}">
+									<i class="fa fa-trash"></i>
+								</a>
+							{% endif %}
+						</td>
+						{% set i=i+1 %}
+					</tr>
+				{% endfor %}
+            </tbody>
+        </table>                                    
+    </div>
+
 	<style type="text/css">
 
 	
@@ -34,4 +74,13 @@
    cursor: default;
 }
 	</style>
+{% endblock %}
+{% block javascripts %}
+
+<script type="text/javascript" src="{{asset('js/plugins/bootstrap/bootstrap-file-input.js')}}"></script>
+<script type="text/javascript">
+
+     
+</script>
+
 {% endblock %}

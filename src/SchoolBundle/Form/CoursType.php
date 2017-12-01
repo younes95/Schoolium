@@ -17,14 +17,18 @@ class CoursType extends AbstractType
         $builder
             ->add('titre')
             ->add('devoir', FileType::class, array(
+                'attr'=> ['id'=> 'labelinputForm'],
+                'data_class' => null,
                 'required' => false, 
                 'label' => "Uploader un fichier (devoir maison)"))
             
             ->add('support', FileType::class, array(
                 'required' => false, 
+                'data_class' => null,
                 'label' => "Uploader un fichier (support de cours)"))
             ->add('annexe', FileType::class, array(
                 'required' => false, 
+                'data_class' => null,
                 'label' => "Uploader un fichier (annexe)"));
     }
     

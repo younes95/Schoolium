@@ -574,7 +574,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.53faa51d0996cc95f004d64c14a29467"/>
+      <argument type="service" id="service_locator.ae1af4a9497b4b2960408ed449fba502"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -619,6 +619,7 @@
     <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate">
       <argument type="collection">
         <argument type="service" id="templating.cache_warmer.template_paths"/>
+        <argument type="service" id="kernel.class_cache.cache_warmer"/>
         <argument type="service" id="validator.mapping.cache_warmer"/>
         <argument type="service" id="translation.warmer"/>
         <argument type="service" id="router.cache_warmer"/>
@@ -629,6 +630,7 @@
       </argument>
     </service>
     <service id="kernel.class_cache.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ClassCacheCacheWarmer">
+      <tag name="kernel.cache_warmer"/>
       <argument type="collection">
         <argument>Symfony\Component\HttpFoundation\ParameterBag</argument>
         <argument>Symfony\Component\HttpFoundation\HeaderBag</argument>
@@ -637,7 +639,6 @@
         <argument>Symfony\Component\HttpFoundation\Request</argument>
         <argument>Symfony\Component\HttpKernel\Kernel</argument>
       </argument>
-      <deprecated>The "%service_id%" option is deprecated since version 3.3, to be removed in 4.0.</deprecated>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="collection">
@@ -743,7 +744,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>-2vmMPRYlmxcgkxMjwSkuy</argument>
+      <argument>NX+CF1qYVubzKk6pv3M6eQ</argument>
       <argument>C:\wamp64\www\SCHOOL-master\school\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -753,7 +754,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>-2vmMPRYlmxcgkxMjwSkuy</argument>
+      <argument>NX+CF1qYVubzKk6pv3M6eQ</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2102,6 +2103,14 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
+        <argument>console.command</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -3125,12 +3134,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5a0ec93b3fd724.72055319</argument>
+      <argument>5a1afcc06a21f0.94007943</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5a0ec93b3fd724.72055319</argument>
+      <argument>5a1afcc06a21f0.94007943</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3825,7 +3834,9 @@
       </argument>
       <argument type="service" id="doctrine.dbal.default_connection.configuration"/>
       <argument type="service" id="doctrine.dbal.default_connection.event_manager"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="enum">string</argument>
+      </argument>
       <factory service="doctrine.dbal.connection_factory" method="createConnection"/>
     </service>
     <service id="doctrine.orm.proxy_cache_warmer" class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer" public="false">
@@ -4460,6 +4471,12 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
+    <service id="service_locator.9a7dbe7c3f50eff43f96708a6d342f79" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="absence" type="service" id="autowired.UserBundle\Entity\Absence"/>
+      </argument>
+    </service>
     <service id="service_locator.d8c6871eac8f7fc5d6c32f2a513f097b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
@@ -4528,9 +4545,10 @@
         <argument key="parental" type="service" id="autowired.UserBundle\Entity\Parental"/>
       </argument>
     </service>
-    <service id="service_locator.53faa51d0996cc95f004d64c14a29467" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.ae1af4a9497b4b2960408ed449fba502" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="UserBundle\Controller\AbsenceController:editAction" type="service" id="service_locator.9a7dbe7c3f50eff43f96708a6d342f79"/>
         <argument key="UserBundle\Controller\AdminController:assoSchoolAction" type="service" id="service_locator.59e32f74c7658ead700232546883997b"/>
         <argument key="UserBundle\Controller\AdminController:editAction" type="service" id="service_locator.8354048199a5f51ba79e3601d2408d31"/>
         <argument key="UserBundle\Controller\AdminController:profileAction" type="service" id="service_locator.59e32f74c7658ead700232546883997b"/>
@@ -4549,6 +4567,7 @@
         <argument key="UserBundle\Controller\ParentalController:editAction" type="service" id="service_locator.5088ad102906363d71e711956108d3ef"/>
         <argument key="UserBundle\Controller\ParentalController:profileAction" type="service" id="service_locator.eff5e9bca454bfd26380c3a61f8bcdb3"/>
         <argument key="UserBundle\Controller\ParentalController:removeAction" type="service" id="service_locator.eff5e9bca454bfd26380c3a61f8bcdb3"/>
+        <argument key="UserBundle\Controller\AbsenceController::editAction" type="service" id="service_locator.9a7dbe7c3f50eff43f96708a6d342f79"/>
         <argument key="UserBundle\Controller\AdminController::assoSchoolAction" type="service" id="service_locator.59e32f74c7658ead700232546883997b"/>
         <argument key="UserBundle\Controller\AdminController::editAction" type="service" id="service_locator.8354048199a5f51ba79e3601d2408d31"/>
         <argument key="UserBundle\Controller\AdminController::profileAction" type="service" id="service_locator.59e32f74c7658ead700232546883997b"/>
@@ -4794,6 +4813,7 @@
         <argument key="twig" type="service" id="twig"/>
       </argument>
     </service>
+    <service id="autowired.UserBundle\Entity\Absence" class="UserBundle\Entity\Absence" public="false" autowire="true"/>
     <service id="autowired.UserBundle\Entity\Admin" class="UserBundle\Entity\Admin" public="false" autowire="true"/>
     <service id="autowired.UserBundle\Entity\Eleve" class="UserBundle\Entity\Eleve" public="false" autowire="true"/>
     <service id="autowired.UserBundle\Entity\Enseignant" class="UserBundle\Entity\Enseignant" public="false" autowire="true"/>
@@ -4827,7 +4847,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>79TD8mpkZE</argument>
       <argument>0</argument>
-      <argument>-2vmMPRYlmxcgkxMjwSkuy</argument>
+      <argument>NX+CF1qYVubzKk6pv3M6eQ</argument>
       <argument>C:\wamp64\www\SCHOOL-master\school\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4835,7 +4855,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>ukJjgmOfam</argument>
       <argument>0</argument>
-      <argument>-2vmMPRYlmxcgkxMjwSkuy</argument>
+      <argument>NX+CF1qYVubzKk6pv3M6eQ</argument>
       <argument>C:\wamp64\www\SCHOOL-master\school\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4843,7 +4863,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>RTyUnlX32M</argument>
       <argument>0</argument>
-      <argument>-2vmMPRYlmxcgkxMjwSkuy</argument>
+      <argument>NX+CF1qYVubzKk6pv3M6eQ</argument>
       <argument>C:\wamp64\www\SCHOOL-master\school\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4851,7 +4871,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>ivPwA0TQAs</argument>
       <argument>0</argument>
-      <argument>-2vmMPRYlmxcgkxMjwSkuy</argument>
+      <argument>NX+CF1qYVubzKk6pv3M6eQ</argument>
       <argument>C:\wamp64\www\SCHOOL-master\school\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

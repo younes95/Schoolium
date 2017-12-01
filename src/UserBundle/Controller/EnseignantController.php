@@ -126,7 +126,7 @@ class EnseignantController extends Controller
     }
 
     /**
-     * @Route("/listeClasse/{id}", name="listeClasses")
+     * @Route("/list/class/{id}", name="enseignant_liste_classes")
      */
     public function showClasseAction(Request $request)
     {
@@ -136,8 +136,11 @@ class EnseignantController extends Controller
         $id= $request->attributes->get('id');
         $em = $this->getDoctrine()->getManager();
         $enseignant=$em->getRepository('UserBundle:Enseignant')->findOneBy(array('id'=>$id));
+        $ensMatiere=$em->getRepository('SchoolBundle:EnsMat')->findBy(array('enseignant'=> $enseignant));
+        
         $data['classes']=$em->getRepository('SchoolBundle:EnsMat')->findBy(array('enseignant'=> $enseignant ));
         $data['enseignant']=$enseignant;
+        $data['ensMat']=$ensMatiere;
          return $this->render('enseignantsViews/listClasses.html.twig',array("data"=>$data));
     }
 }

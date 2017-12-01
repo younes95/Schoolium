@@ -48,6 +48,20 @@ class MatiereEleve
      */
     private $note;
    
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date",nullable=true)
+     */
+    private $date;
+
+    /**
+     * @var text $remarque
+     *
+     * @ORM\Column(name="remarque", type="text")
+     */
+    private $remarque;
+
 
     /**
      * Get id
@@ -153,5 +167,53 @@ class MatiereEleve
     public function getEvaluation()
     {
         return $this->evaluation;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return MatiereEleve
+     */
+    public function setDate(\DateTime $date = null)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set remarque
+     *
+     * @param string $remarque
+     *
+     * @return MatiereEleve
+     */
+    public function setRemarque($remarque)
+    {
+        $this->remarque = $remarque;
+
+        return $this;
+    }
+
+    /**
+     * Get remarque
+     *
+     * @return string
+     */
+    public function getRemarque()
+    {
+        return $this->remarque;
     }
 }
